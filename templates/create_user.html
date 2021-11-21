@@ -1,0 +1,29 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}
+  Create user
+{% endblock %}
+
+{% block content %}
+
+    {% from "helpers/formhelpers.html" import render_field %}
+
+    <div class="w3-card-4 w3-margin">
+
+        <div class="w3-container w3-green">
+          <h2>Create user</h2>
+        </div>
+
+        <form class="w3-container w3-white w3-padding" method="post">
+
+            {{ form.csrf_token }}
+            {{ render_field(form.username) }}
+            {{ render_field(form.password) }}
+
+            <input class="w3-button w3-green" type="submit" value="Create user">
+
+        </form>
+
+    </div>
+
+{% endblock %}

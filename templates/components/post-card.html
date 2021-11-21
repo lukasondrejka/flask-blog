@@ -1,0 +1,24 @@
+<!-- Post -->
+<div class="w3-card w3-margin w3-white">
+    <div class="w3-container">
+
+        <a href="{{ url_for('post', id=post.id) }}" style="text-decoration: none">
+            <h3>{{ post.title }}</h3>
+        </a>
+
+        <h5>
+            Posted by <a href="{{ url_for('user', id=post.user.id) }}" class="w3-opacity">{{ post.user.username }}</a>
+            on {{ post.formatted_short_created_at }}
+        </h5>
+
+        <p>{{ post.teaser }}</p>
+
+        <p>
+            <a href="{{ url_for('post', id=post.id) }}" class="w3-button w3-padding-large w3-white w3-border">
+                Read
+            </a>
+        </p>
+
+    </div>
+</div>
+<!-- END Post -->

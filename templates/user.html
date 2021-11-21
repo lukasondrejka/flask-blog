@@ -1,0 +1,21 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}
+  Homepage
+{% endblock %}
+
+{% block content %}
+
+    <div class="w3-card w3-margin w3-white ">
+        <div class="w3-container">
+            <h3>{{ user.username }}</h3>
+        </div>
+    </div>
+
+    {% for post in posts %}
+        {% with post=post %}
+            {% include 'components/post-card.html' %}
+        {% endwith %}
+    {% endfor %}
+
+{% endblock %}

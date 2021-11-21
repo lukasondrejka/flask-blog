@@ -1,0 +1,43 @@
+{% extends 'layouts/layout.html' %}
+
+{% from "helpers/formhelpers.html" import render_field %}
+
+{% block title %}
+    {% if post == None %}
+        Create post
+    {% else %}
+        Edit post
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="w3-card w3-margin w3-white">
+
+        <div class="w3-container w3-green">
+          <h2>
+            {% if post == None %}
+                Create post
+            {% else %}
+                Edit post
+            {% endif %}
+          </h2>
+        </div>
+
+        <form class="w3-container w3-padding" method="post">
+
+            {{ form.csrf_token }}
+            {{ render_field(form.title) }}
+            {{ render_field(form.text) }}
+
+            {% if post != None %}
+                <a href="{{ url_for('post', id=post.id) }}" class="w3-button w3-green">Back</a>
+            {% endif %}
+
+            <input class="w3-button w3-green" type="submit" value="Save">
+
+        </form>
+
+    </div>
+
+{% endblock %}
