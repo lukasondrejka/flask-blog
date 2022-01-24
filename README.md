@@ -3,7 +3,7 @@
 Jednoduchý blogový systém, založerný na python frameworku Flask.
 
 
-## Závislosti
+## Použité knižnioce a závislosti
 
 * [Flask](https://flask.palletsprojects.com/en/latest/)
 * [Flask-Login](https://flask-login.readthedocs.io/en/latest/)
@@ -25,7 +25,7 @@ $ git clone https://github.com/lukasondrejka/simple-blog.git
 $ cd simple-blog
 ```
 
-#### 2. Vytvorenie a aktivácia virtuálneho prostrediea virtualenv a stiahnutie závislostí.
+#### 2. Vytvorenie a aktivácia virtuálneho prostrediea virtualenv a stiahnutie závislostí
 ```shell
 $ python -m venv .venv
 $ source .venv/bin/activate
