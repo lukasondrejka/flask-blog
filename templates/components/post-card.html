@@ -8,7 +8,7 @@
 
         <h5>
             Posted by <a href="{{ url_for('user', id=post.user.id) }}" class="w3-opacity">{{ post.user.username }}</a>
-            on {{ post.formatted_short_created_at }}
+            on {{ post.formatted_created_at }}
         </h5>
 
         <p>{{ post.teaser }}</p>

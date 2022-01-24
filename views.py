@@ -7,7 +7,7 @@ from app import app, login_manager
 
 @app.route('/', methods=['GET'])
 def home():
-    posts = Post.latest()
+    posts = Post.all()[::-1]
     return render_template("posts.html", posts=posts)
 
 
@@ -111,5 +111,6 @@ def edit_user(id):
 def user(id):
     user = User.where(id=id).first()
     if user:
-        return render_template("user.html", user=user, posts=user.posts)
+        posts = user.posts[::-1]
+        return render_template("user.html", user=user, posts=posts)
     return redirect(url_for('home'))

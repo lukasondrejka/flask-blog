@@ -17,7 +17,7 @@
 
             <h5>
                 Posted by <a href="{{ url_for('user', id=post.user.id) }}" class="w3-opacity">{{ post.user.username }}</a>
-                on {{ post.formatted_short_created_at }}
+                on {{ post.formatted_created_at }}
             </h5>
 
             {% if current_user.id == post.user.id %}
@@ -35,9 +35,13 @@
             </p>
 
             {% if current_user.is_authenticated %}
-                <p>Posted at {{ post.formatted_created_at }}</p>
-                {% if post.created_at != post.updated_at %}
-                    <p>Updated at {{ post.formatted_updated_at }}</p>
+                {% if post.created_at == post.updated_at %}
+                    <p>Posted on {{ post.formatted_updated_at }}</p>
+                {% elif post.formatted_created_at == post.formatted_updated_at %}
+                    <p>Posted and updated on {{ post.formatted_created_at }}</p>
+                {% else %}
+                    <p>Posted on {{ post.formatted_updated_at }}</p>
+                    <p>Updated on {{ post.formatted_updated_at }}</p>
                 {% endif %}
             {% endif %}
 

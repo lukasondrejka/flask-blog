@@ -18,11 +18,6 @@ class TimestampsMixin(SqlalchemyTimestampsMixin):
     @staticmethod
     def format_datetime(sa_dt):
         dt = datetime.strptime(str(sa_dt), '%Y-%m-%d %H:%M:%S')
-        return dt.strftime('%B %d, %Y, %I:%M %p')
-
-    @staticmethod
-    def format_short_datetime(sa_dt):
-        dt = datetime.strptime(str(sa_dt), '%Y-%m-%d %H:%M:%S')
         return dt.strftime('%B %d, %Y')
 
     @property
@@ -30,20 +25,8 @@ class TimestampsMixin(SqlalchemyTimestampsMixin):
         return TimestampsMixin.format_datetime(self.created_at)
 
     @property
-    def formatted_short_created_at(self):
-        return TimestampsMixin.format_short_datetime(self.created_at)
-
-    @property
     def formatted_updated_at(self):
         return TimestampsMixin.format_datetime(self.updated_at)
-
-    @property
-    def formatted_short_updated_at(self):
-        return TimestampsMixin.format_short_datetime(self.updated_at)
-
-    @classmethod
-    def latest(cls):
-        return cls.query.order_by(TimestampsMixin.created_at.desc())
 
 
 class User(BaseModel, UserMixin):
