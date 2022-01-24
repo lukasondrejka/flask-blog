@@ -19,20 +19,25 @@ Kompletný zoznam závislostí je zapísaný v súbore [requirements.txt](requir
 
 Pre spustenie projektu je potrebné mať nainštalovaný [python3](https://www.python.org/downloads/), [pip](https://pypi.org/project/pip/), [virtualenv](https://pypi.org/project/virtualenv/) a git.
 
-#### 1 Stiahnutie projektu
+#### 1. Stiahnutie projektu
 ```shell
 $ git clone https://github.com/lukasondrejka/simple-blog.git
 $ cd simple-blog
 ```
 
-#### 2 Vytvorenie a aktivácia virtuálneho prostrediea virtualenv a stiahnutie závislostí.
+#### 2. Vytvorenie a aktivácia virtuálneho prostrediea virtualenv a stiahnutie závislostí.
 ```shell
 $ python -m venv .venv
 $ source .venv/bin/activate
 (venv)$ pip install -r requirements.txt
 ```
 
-#### 3 Spustenie projektu
+Virtuálne prostredie virtualenv je možné deaktivovať príkazom `source .venv/bin/deactivate`.
+
+V operačnom systéme Windows je potrebné aktivovať (deaktivovať) virtuálne prostredie príkazom `.venv\bin\activate` (`.venv\bin\deactivate`).
+
+
+#### 3. Spustenie projektu
 ```shell
 (venv)$ python app.py
 ```
