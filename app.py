@@ -10,8 +10,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SECRET_KEY'] = "SECRET_KEY"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(session_options={'autocommit': True})
-database.init_db(app)
+db.init_app(app)
 BaseModel.set_session(db.session)
 
 login_manager = LoginManager()
