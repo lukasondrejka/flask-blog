@@ -2,6 +2,8 @@
 
 Jednoduchý blogový systém, založerný na python frameworku Flask.
 
+![blog](https://user-images.githubusercontent.com/20649778/171685742-5fe16c3b-f313-4d32-87df-012859a0305d.png)
+
 
 ## Použité knižnioce a závislosti
 
