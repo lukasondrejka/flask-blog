@@ -1,0 +1,33 @@
+version:  '3.8'
+
+services:
+
+  app:
+    build: ./app
+    restart: on-failure
+    depends_on:
+      - db
+    environment:
+      SECRET_KEY: secret
+      DB_HOST: db
+      DB_USER: user
+      DB_PASSWORD: password
+      DB_NAME: database
+    ports:
+      - 80:80
+    networks:
+      - flask-app
+  
+  db:
+    image: mariadb:11
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    networks:
+      - flask-app
+
+networks:
+  flask-app:

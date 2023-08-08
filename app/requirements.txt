@@ -8,6 +8,9 @@ greenlet==1.1.2
 itsdangerous==2.0.1
 Jinja2==3.0.3
 MarkupSafe==2.0.1
+mysql-connector-python==8.1.0
+mysqlclient==2.2.0
+protobuf==4.21.12
 six==1.16.0
 SQLAlchemy==1.4.27
 sqlalchemy-mixins==1.5
