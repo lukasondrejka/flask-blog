@@ -1,11 +1,11 @@
-# Simple blog
+# Flask blog
 
-Jednoduchý blogový systém, založerný na python frameworku Flask.
+Simple blogging system written in Python using Flask framework. Application is using Mysql (mariadb) database for storing data, SQLAlchemy for ORM and WTForms for forms.
 
 ![blog](https://user-images.githubusercontent.com/20649778/171685742-5fe16c3b-f313-4d32-87df-012859a0305d.png)
 
 
-## Použité knižnioce a závislosti
+## Dependencies
 
 * [Flask](https://flask.palletsprojects.com/en/latest/)
 * [Flask-Login](https://flask-login.readthedocs.io/en/latest/)
@@ -14,33 +14,35 @@ Jednoduchý blogový systém, založerný na python frameworku Flask.
 * [WTForms](https://wtforms.readthedocs.io/en/3.0.x/)
 * [W3.css](https://www.w3schools.com/w3css/)
 
-Kompletný zoznam závislostí je zapísaný v súbore [requirements.txt](requirements.txt).
+Full list of dependencies can be found in [requirements.txt](app/requirements.txt).
 
 
-## Spustenie projektu
+## Project setup
 
-Pre spustenie projektu je potrebné mať nainštalovaný [python3](https://www.python.org/downloads/), [pip](https://pypi.org/project/pip/), [virtualenv](https://pypi.org/project/virtualenv/) a git.
+### Requirements
 
-#### 1. Stiahnutie projektu
-```shell
-$ git clone https://github.com/lukasondrejka/simple-blog.git
-$ cd simple-blog
+* Docker
+* docker-compose
+
+### Setup
+
+```bash
+docker-compose up
 ```
 
-#### 2. Vytvorenie a aktivácia virtuálneho prostrediea virtualenv a stiahnutie závislostí
-```shell
-$ python -m venv .venv
-$ source .venv/bin/activate
-(venv)$ pip install -r requirements.txt
-```
+Application will be available at [localhost](http://localhost). Login credentials for [login page](http://localhost/login) are `admin@localhost` and `password`.
 
-Virtuálne prostredie virtualenv je možné deaktivovať príkazom `source .venv/bin/deactivate`.
+## Endpoints
 
-V operačnom systéme Windows je potrebné aktivovať (deaktivovať) virtuálne prostredie príkazom `.venv\bin\activate` (`.venv\bin\deactivate`).
-
-
-#### 3. Spustenie projektu
-```shell
-(venv)$ python app.py
-```
-
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| / | GET | Home page |
+| /login | GET, POST | Login |
+| /logout | GET | Logout |
+| /post/create | GET, POST | Create post |
+| /post/{id} | GET | Post |
+| /post/{id}/edit | GET, POST | Edit post |
+| /post/{id}/remove | GET, POST | Delete post |
+| /user/create | GET, POST | Create user |
+| /user/{id} | GET | User profile |
+| /user/{id}/edit | GET, POST | Edit user |
